@@ -72,20 +72,20 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
         viewFinderView = new ViewFinderView(ScannerActivity.this);
         viewFinderView.setBorderColor(getResources().getColor(R.color.colorPrimary));
 
-        ImageView scan_gallery = findViewById(R.id.scan_gallery);
-        scan_gallery.setOnClickListener(v -> {
-            if (SystemClock.elapsedRealtime() - mLastClickTime < 1500){
-                return;
-            }
-            mLastClickTime = SystemClock.elapsedRealtime();
-
-            if (!checkCameraPermission()) {
-                requestCameraPermission();
-            }
-            else {
-                startAddingImages();
-            }
-        });
+//        ImageView scan_gallery = findViewById(R.id.scan_gallery);
+//        scan_gallery.setOnClickListener(v -> {
+//            if (SystemClock.elapsedRealtime() - mLastClickTime < 1500){
+//                return;
+//            }
+//            mLastClickTime = SystemClock.elapsedRealtime();
+//
+//            if (!checkCameraPermission()) {
+//                requestCameraPermission();
+//            }
+//            else {
+//                startAddingImages();
+//            }
+//        });
 
         ImageView scan_flash = findViewById(R.id.scan_flash);
         scan_flash.setOnClickListener(v -> {
