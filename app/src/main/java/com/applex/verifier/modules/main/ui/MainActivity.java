@@ -39,12 +39,8 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity {
     Button buttonqr;
     private String data="";
-    private Bitmap bitmap;
     private long mLastClickTime = 0;
-    private Button qr, btnScan;
-    private TextView qr_text, title_text;
-    private LinearLayout layout;
-    private ImageView qrImageview, shareQr;
+    private TextView qr_text;
 
     public static Uri resultUri;
     private String[] cameraPermission;
