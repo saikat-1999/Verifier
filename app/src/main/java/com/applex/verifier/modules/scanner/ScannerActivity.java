@@ -48,25 +48,24 @@ import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 public class ScannerActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler{
 
-    private Bitmap bitmap;
-    private boolean mPermissionGranted = false;
-    private static final int INTENT_REQUEST_GET_IMAGES = 13;
+//    private Bitmap bitmap;
+//    private static final int INTENT_REQUEST_GET_IMAGES = 13;
 //    private static final int REQUEST_PERMISSIONS_CODE = 124;
 //    private static final int CAMERA_REQUEST_CODE = 200;
-    private String[] cameraPermission;
+//    private boolean mPermissionGranted = false;
+//    private String[] cameraPermission;
     private boolean flashState = false;
-    //private IntroPref introPref;
     private ZXingScannerView scannerView;
     private ViewFinderView viewFinderView;
-    private long mLastClickTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr_scanner);
 
-        cameraPermission = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
-        mPermissionGranted = PermissionsUtils.getInstance().checkRuntimePermissions(this, READ_WRITE_CAMERA_PERMISSIONS);
+//        cameraPermission = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+//        mPermissionGranted = PermissionsUtils.getInstance().checkRuntimePermissions(this, READ_WRITE_CAMERA_PERMISSIONS);
+
         scannerView = findViewById(R.id.zxing_scanner);
         viewFinderView = new ViewFinderView(ScannerActivity.this);
         viewFinderView.setBorderColor(getResources().getColor(R.color.colorPrimary));
@@ -100,30 +99,30 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
             }
         });
 
-        Intent intent = getIntent();
-        String action = intent.getAction();
-        String type = intent.getType();
-
-        //////////////SHARED CONTENT////////////////////
-        if(Intent.ACTION_SEND.equals(action) && type != null) {
-            if (type.startsWith("image/")) {
-                Uri image_uri = intent.getParcelableExtra(Intent.EXTRA_STREAM);
-                if (image_uri != null) {
-                    CropImage.activity(image_uri)
-                            .setActivityTitle("Crop QR")
-                            .setCropMenuCropButtonTitle("Set")
-                            .setAllowRotation(TRUE)
-                            .setAspectRatio(1,1)
-                            .setAllowCounterRotation(TRUE)
-                            .setAllowFlipping(TRUE)
-                            .setAutoZoomEnabled(TRUE)
-                            .setMultiTouchEnabled(FALSE)
-                            .setGuidelines(CropImageView.Guidelines.ON)
-                            .start(this);
-                }
-            }
-        }
-        //////////////SHARED CONTENT////////////////////
+//        Intent intent = getIntent();
+//        String action = intent.getAction();
+//        String type = intent.getType();
+//
+//        //////////////SHARED CONTENT////////////////////
+////        if(Intent.ACTION_SEND.equals(action) && type != null) {
+////            if (type.startsWith("image/")) {
+////                Uri image_uri = intent.getParcelableExtra(Intent.EXTRA_STREAM);
+////                if (image_uri != null) {
+////                    CropImage.activity(image_uri)
+////                            .setActivityTitle("Crop QR")
+////                            .setCropMenuCropButtonTitle("Set")
+////                            .setAllowRotation(TRUE)
+////                            .setAspectRatio(1,1)
+////                            .setAllowCounterRotation(TRUE)
+////                            .setAllowFlipping(TRUE)
+////                            .setAutoZoomEnabled(TRUE)
+////                            .setMultiTouchEnabled(FALSE)
+////                            .setGuidelines(CropImageView.Guidelines.ON)
+////                            .start(this);
+////                }
+////            }
+////        }
+//        //////////////SHARED CONTENT////////////////////
     }
 
     @Override
