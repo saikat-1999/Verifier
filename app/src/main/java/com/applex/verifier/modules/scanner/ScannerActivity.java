@@ -1,5 +1,6 @@
 package com.applex.verifier.modules.scanner;
 
+import static com.applex.verifier.modules.utilities.CommonUtils.Constants.READ_WRITE_CAMERA_PERMISSIONS;
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
