@@ -149,37 +149,37 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
         scannerView.stopCamera();
     }
 
+//    /////gallery
+//    private void startAddingImages() {
+//        mPermissionGranted = PermissionsUtils.getInstance().checkRuntimePermissions(this,
+//                READ_WRITE_CAMERA_PERMISSIONS);
+//        if (!mPermissionGranted) {
+//            getRuntimePermissions();
+//            return;
+//        }
+//        selectImages();
+//    }
+
+//    private void selectImages() {
+//         Matisse.from(this)
+//                    .choose(MimeType.ofImage(), true)
+//                    .countable(true)
+//                    .maxSelectable(25)
+//                    .thumbnailScale(1.0f)
+//                    .theme(R.style.Matisse_Zhihu)
+//                    .imageEngine(new PicassoEngine())
+//                    .forResult(INTENT_REQUEST_GET_IMAGES);
+//    }
     /////gallery
-    private void startAddingImages() {
-        mPermissionGranted = PermissionsUtils.getInstance().checkRuntimePermissions(this,
-                READ_WRITE_CAMERA_PERMISSIONS);
-        if (!mPermissionGranted) {
-            getRuntimePermissions();
-            return;
-        }
-        selectImages();
-    }
 
-    private void selectImages() {
-         Matisse.from(this)
-                    .choose(MimeType.ofImage(), true)
-                    .countable(true)
-                    .maxSelectable(25)
-                    .thumbnailScale(1.0f)
-                    .theme(R.style.Matisse_Zhihu)
-                    .imageEngine(new PicassoEngine())
-                    .forResult(INTENT_REQUEST_GET_IMAGES);
-    }
-    /////gallery
-
-    private void getRuntimePermissions() {
-        PermissionsUtils.getInstance().requestRuntimePermissions(this,
-                READ_WRITE_CAMERA_PERMISSIONS,
-                REQUEST_PERMISSIONS_CODE);
-
-        mPermissionGranted = PermissionsUtils.getInstance().checkRuntimePermissions(this,
-                READ_WRITE_CAMERA_PERMISSIONS);
-    }
+//    private void getRuntimePermissions() {
+//        PermissionsUtils.getInstance().requestRuntimePermissions(this,
+//                READ_WRITE_CAMERA_PERMISSIONS,
+//                REQUEST_PERMISSIONS_CODE);
+//
+//        mPermissionGranted = PermissionsUtils.getInstance().checkRuntimePermissions(this,
+//                READ_WRITE_CAMERA_PERMISSIONS);
+//    }
 
 //    private void requestCameraPermission(){
 //        ActivityCompat.requestPermissions(this, cameraPermission, CAMERA_REQUEST_CODE);
