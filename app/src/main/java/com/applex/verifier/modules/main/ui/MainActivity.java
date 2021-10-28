@@ -114,47 +114,47 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     //////////////////PERMISSION REQUESTS/////////////////
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
-            CropImage.ActivityResult result = CropImage.getActivityResult(data);
-            if (resultCode == RESULT_OK) {
-                resultUri = Objects.requireNonNull(result).getUri();
-                Bitmap bitmap = null;
-                try {
-                    bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), resultUri);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                TextRecognizer recognizer = new TextRecognizer.Builder(MainActivity.this).build();
-
-                if (!recognizer.isOperational()) {
-                    Toast.makeText(getApplicationContext(), "Text not recognisable", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    Frame frame = new Frame.Builder().setBitmap(Objects.requireNonNull(bitmap)).build();
-                    SparseArray<TextBlock> items = recognizer.detect(frame);
-                    StringBuilder sb = new StringBuilder();
-                    for (int i = 0; i < items.size(); i++) {
-                        TextBlock myItem = items.valueAt(i);
-                        sb.append(myItem.getValue());
-                        if (i != items.size() - 1) {
-                            sb.append("\n");
-                        }
-                    }
-
-                    Intent intent = new Intent(MainActivity.this, ScannerActivity.class);
-                    intent.putExtra("Text",sb.toString().trim());
-                    intent.putExtra("selection", "1");
-                    startActivity(intent);
-                }
-            }
-        }
-        else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
-            Toast.makeText(MainActivity.this, "Something went wrong...", Toast.LENGTH_SHORT).show();
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+//            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+//            if (resultCode == RESULT_OK) {
+//                resultUri = Objects.requireNonNull(result).getUri();
+//                Bitmap bitmap = null;
+//                try {
+//                    bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), resultUri);
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//
+//                TextRecognizer recognizer = new TextRecognizer.Builder(MainActivity.this).build();
+//
+//                if (!recognizer.isOperational()) {
+//                    Toast.makeText(getApplicationContext(), "Text not recognisable", Toast.LENGTH_SHORT).show();
+//                }
+//                else {
+//                    Frame frame = new Frame.Builder().setBitmap(Objects.requireNonNull(bitmap)).build();
+//                    SparseArray<TextBlock> items = recognizer.detect(frame);
+//                    StringBuilder sb = new StringBuilder();
+//                    for (int i = 0; i < items.size(); i++) {
+//                        TextBlock myItem = items.valueAt(i);
+//                        sb.append(myItem.getValue());
+//                        if (i != items.size() - 1) {
+//                            sb.append("\n");
+//                        }
+//                    }
+//
+//                    Intent intent = new Intent(MainActivity.this, ScannerActivity.class);
+//                    intent.putExtra("Text",sb.toString().trim());
+//                    intent.putExtra("selection", "1");
+//                    startActivity(intent);
+//                }
+//            }
+//        }
+//        else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+//            Toast.makeText(MainActivity.this, "Something went wrong...", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 }
