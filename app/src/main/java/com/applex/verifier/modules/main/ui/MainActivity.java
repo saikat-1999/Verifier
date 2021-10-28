@@ -64,7 +64,9 @@ public class MainActivity extends AppCompatActivity {
 //            Animation bounce = AnimationUtils.loadAnimation(MainActivity.this, R.anim.bounce);
 //            btnScan.startAnimation(bounce);
             if(checkCameraPermission()){
+                qr_text.setText(getResources().getString(R.string.the_contents_of_the_qr_code_will_be_displayed_here));
                 startActivity(new Intent(MainActivity.this, ScannerActivity.class));
+                finish();
             }
             else {
                 requestCameraPermission();
