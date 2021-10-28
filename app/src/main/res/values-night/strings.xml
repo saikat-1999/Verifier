@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Verifier</string>
-    <string name="an_initiative_of">an initiative of</string>
-    <string name="applex_in">applex.in</string>
+    <string name="noob">TheN00bBeeFive</string>
     <string name="generate_qr">Generate QR</string>
     <string name="generated_qr">Generated QR</string>
     <string name="choose_zip">Choose zip</string>
