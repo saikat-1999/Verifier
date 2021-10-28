@@ -57,14 +57,16 @@ public class MainActivity extends AppCompatActivity {
 
         buttonqr = findViewById(R.id.qr);
 
+        cameraPermission = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+
         buttonqr.setOnClickListener(v -> {
             if (SystemClock.elapsedRealtime() - mLastClickTime < 1500) {
                 return;
             }
             mLastClickTime = SystemClock.elapsedRealtime();
 
-            Animation bounce = AnimationUtils.loadAnimation(MainActivity.this, R.anim.bounce);
-            btnScan.startAnimation(bounce);
+//            Animation bounce = AnimationUtils.loadAnimation(MainActivity.this, R.anim.bounce);
+//            btnScan.startAnimation(bounce);
             if(checkCameraPermission()){
                 startActivity(new Intent(MainActivity.this, ScannerActivity.class));
             }
