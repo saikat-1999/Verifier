@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".modules.splash.ui.ActivitySplash">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_baseline_verified_user_24"
+        tools:ignore="UseAppTint" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:visibility="gone"
+        android:layout_above="@+id/from"
+        android:layout_marginBottom="30dp"/>
+
+    <TextView
+        android:id="@+id/from"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/an_initiative_of"
+        android:gravity="center|bottom"
+        android:textSize="15sp"
+        android:visibility="gone"
+        android:layout_above="@+id/applex"
+        android:textAllCaps="false" />
+
+    <TextView
+        android:id="@+id/applex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center|bottom"
+        android:text="@string/applex_in"
+        android:layout_marginBottom="20dp"
+        android:textSize="18sp" />
+
+</RelativeLayout>

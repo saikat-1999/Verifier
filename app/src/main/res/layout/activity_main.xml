@@ -1,18 +1,383 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    tools:context=".modules.main.ui.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/qr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/scan_a_qr_code"
+                android:textStyle="bold"
+                android:textColor="#fff"
+                android:padding="10dp"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginTop="50dp"
+                android:textSize="20sp"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textAllCaps="false"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/image_text"
+                android:layout_width="match_parent"
+                android:textSize="20sp"
+                android:paddingVertical="10dp"
+                android:textColor="#000"
+                android:layout_marginTop="18dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_marginHorizontal="10dp"
+                android:text="@string/the_contents_of_the_qr_code_will_be_displayed_here" />
+
+            <LinearLayout
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="5dp"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:layout_margin="20dp"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/scanned_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="5dp"
+                    android:text="@string/the_contents_of_the_qr_code_will_be_displayed_here"
+                    android:textAlignment="textStart"
+                    android:textColor="#fff"
+                    android:paddingStart="20dp"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/name"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:paddingVertical="5dp"
+                            android:text="@string/name"
+                            android:textAlignment="textStart"
+                            android:textColor="#fff"
+                            android:paddingStart="20dp"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/name_value"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:paddingVertical="5dp"
+                            android:textColor="#fff"
+                            android:textAlignment="textStart"
+                            android:paddingStart="5dp"
+                            android:layout_weight="2"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/dob"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:paddingVertical="5dp"
+                            android:textColor="#fff"
+                            android:textAlignment="textStart"
+                            android:text="@string/dob"
+                            android:paddingStart="20dp"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:id="@+id/dob_value"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:paddingVertical="5dp"
+                            android:textColor="#fff"
+                            android:textAlignment="textStart"
+                            android:paddingStart="5dp"
+                            android:layout_weight="2"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/gender"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:paddingVertical="5dp"
+                            android:textColor="#fff"
+                            android:textAlignment="textStart"
+                            android:text="@string/gender"
+                            android:paddingStart="20dp"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:id="@+id/gender_value"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:paddingVertical="5dp"
+                            android:textColor="#fff"
+                            android:textAlignment="textStart"
+                            android:paddingStart="5dp"
+                            android:layout_weight="2"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/house"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:paddingVertical="5dp"
+                            android:textColor="#fff"
+                            android:textAlignment="textStart"
+                            android:text="@string/house_no"
+                            android:paddingStart="20dp"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:id="@+id/house_value"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:paddingVertical="5dp"
+                            android:textColor="#fff"
+                            android:textAlignment="textStart"
+                            android:paddingStart="5dp"
+                            android:layout_weight="2"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/street"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:paddingVertical="5dp"
+                            android:textColor="#fff"
+                            android:textAlignment="textStart"
+                            android:text="@string/street"
+                            android:paddingStart="20dp"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:id="@+id/street_value"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:paddingVertical="5dp"
+                            android:textColor="#fff"
+                            android:textAlignment="textStart"
+                            android:paddingStart="5dp"
+                            android:layout_weight="2"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/post_office"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:paddingVertical="5dp"
+                            android:textColor="#fff"
+                            android:textAlignment="textStart"
+                            android:text="@string/post_office"
+                            android:paddingStart="20dp"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:id="@+id/post_office_value"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:paddingVertical="5dp"
+                            android:textColor="#fff"
+                            android:textAlignment="textStart"
+                            android:paddingStart="5dp"
+                            android:layout_weight="2"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/dist"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:paddingVertical="5dp"
+                            android:textColor="#fff"
+                            android:textAlignment="textStart"
+                            android:text="@string/district"
+                            android:paddingStart="20dp"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:id="@+id/dist_value"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:paddingVertical="5dp"
+                            android:textColor="#fff"
+                            android:textAlignment="textStart"
+                            android:paddingStart="5dp"
+                            android:layout_weight="2"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/state"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:paddingVertical="5dp"
+                            android:textColor="#fff"
+                            android:textAlignment="textStart"
+                            android:text="@string/state"
+                            android:paddingStart="20dp"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:id="@+id/state_value"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:paddingVertical="5dp"
+                            android:textColor="#fff"
+                            android:textAlignment="textStart"
+                            android:paddingStart="5dp"
+                            android:layout_weight="2"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/pincode"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:paddingVertical="5dp"
+                            android:textColor="#fff"
+                            android:textAlignment="textStart"
+                            android:text="@string/pincode"
+                            android:paddingStart="20dp"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:id="@+id/pincode_value"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:paddingVertical="5dp"
+                            android:textColor="#fff"
+                            android:textAlignment="textStart"
+                            android:paddingStart="5dp"
+                            android:layout_weight="2"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/country"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:paddingVertical="5dp"
+                            android:textColor="#fff"
+                            android:textAlignment="textStart"
+                            android:text="@string/country"
+                            android:paddingStart="20dp"
+                            android:layout_weight="1"/>
+
+                        <TextView
+                            android:id="@+id/country_value"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:paddingVertical="5dp"
+                            android:textColor="#fff"
+                            android:textAlignment="textStart"
+                            android:paddingStart="5dp"
+                            android:layout_weight="2"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
