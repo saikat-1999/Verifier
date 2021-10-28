@@ -1,4 +1,4 @@
-package com.applex.verifier.modules.main.ui;
+package com.applex.verifier.utilities.CommonUtils;
 
 import android.app.Activity;
 import android.content.Context;

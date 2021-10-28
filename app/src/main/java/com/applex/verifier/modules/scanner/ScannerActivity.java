@@ -1,6 +1,6 @@
 package com.applex.verifier.modules.scanner;
 
-import static com.applex.verifier.modules.utilities.CommonUtils.Constants.READ_WRITE_CAMERA_PERMISSIONS;
+import static com.applex.verifier.utilities.CommonUtils.Constants.READ_WRITE_CAMERA_PERMISSIONS;
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
@@ -23,7 +23,7 @@ import androidx.core.content.ContextCompat;
 
 import com.applex.verifier.R;
 import com.applex.verifier.modules.main.ui.MainActivity;
-import com.applex.verifier.modules.main.ui.PermissionsUtils;
+import com.applex.verifier.utilities.CommonUtils.PermissionsUtils;
 import com.google.zxing.BinaryBitmap;
 import com.google.zxing.ChecksumException;
 import com.google.zxing.FormatException;
