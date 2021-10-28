@@ -1,4 +1,4 @@
-package com.applex.verifier.modules.utilities.CommonUtils;
+package com.applex.verifier.utilities.CommonUtils;
 
 import android.Manifest;
 

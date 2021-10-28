@@ -1,11 +1,11 @@
-package com.applex.verifier.modules.utilities.preferenceManager;
+package com.applex.verifier.utilities.preferenceManager;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
 
-import com.applex.verifier.modules.utilities.CommonUtils.Constants;
+import com.applex.verifier.utilities.CommonUtils.Constants;
 import com.google.gson.Gson;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;

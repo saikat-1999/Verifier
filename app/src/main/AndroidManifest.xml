@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Verifier">
         <activity
-            android:name=".modules.scanner.ActivityScanner"
+            android:name=".modules.scanner.ScannerActivity"
             android:exported="false" />
         <activity
             android:name=".modules.splash.ui.ActivitySplash"
