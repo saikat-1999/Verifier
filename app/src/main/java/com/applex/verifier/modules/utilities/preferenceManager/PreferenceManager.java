@@ -25,7 +25,7 @@ public class PreferenceManager {
     private static final String IS_FIRST_TIME_LAUNCH = "firstTime";
     private static final String IS_FIRST_TIME = "firsttime";
     private final Gson gson;
-    private UserModel currentUser;
+    //private UserModel currentUser;
     private String sharecode;
 
 
@@ -56,18 +56,18 @@ public class PreferenceManager {
         return preferences.getBoolean(Constants.IS_FIRST_TIME,true);
     }
 
-    public void setCurrentUser(UserModel userModel) {
-        Gson gson = new Gson();
-        String userJson = gson.toJson(userModel);
-        editor.putString(Constants.PROPERTY_CURRENT_USER, userJson);
-        editor.apply();
-    }
+//    public void setCurrentUser(UserModel userModel) {
+//        Gson gson = new Gson();
+//        String userJson = gson.toJson(userModel);
+//        editor.putString(Constants.PROPERTY_CURRENT_USER, userJson);
+//        editor.apply();
+//    }
 
-    public UserModel getCurrentUser(){
-        Gson gson = new Gson();
-        String json = preferences.getString(Constants.PROPERTY_CURRENT_USER, "");
-        return gson.fromJson(json, UserModel.class);
-    }
+//    public UserModel getCurrentUser(){
+//        Gson gson = new Gson();
+//        String json = preferences.getString(Constants.PROPERTY_CURRENT_USER, "");
+//        return gson.fromJson(json, UserModel.class);
+//    }
 
     public void setSharecode(String code) {
         editor.putString(Constants.SHARECODE, code);

@@ -161,33 +161,7 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
     }
 
     private void selectImages() {
-
-//        if(introPref.getTheme() == 1) {
-//            switch (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
-//                case Configuration.UI_MODE_NIGHT_YES:
-//                    Matisse.from(this)
-//                            .choose(MimeType.ofImage(), true)
-//                            .countable(true)
-//                            .maxSelectable(25)
-//                            .thumbnailScale(1.0f)
-//                            .theme(R.style.Matisse_Dracula)
-//                            .imageEngine(new PicassoEngine())
-//                            .forResult(INTENT_REQUEST_GET_IMAGES);
-//                    break;
-//                case Configuration.UI_MODE_NIGHT_NO:
-//                    Matisse.from(this)
-//                            .choose(MimeType.ofImage(), true)
-//                            .countable(true)
-//                            .maxSelectable(25)
-//                            .thumbnailScale(1.0f)
-//                            .theme(R.style.Matisse_Zhihu)
-//                            .imageEngine(new PicassoEngine())
-//                            .forResult(INTENT_REQUEST_GET_IMAGES);
-//                    break;
-//            }
-//        }
-//        else if(introPref.getTheme() == 2) {
-            Matisse.from(this)
+         Matisse.from(this)
                     .choose(MimeType.ofImage(), true)
                     .countable(true)
                     .maxSelectable(25)
@@ -195,16 +169,6 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
                     .theme(R.style.Matisse_Zhihu)
                     .imageEngine(new PicassoEngine())
                     .forResult(INTENT_REQUEST_GET_IMAGES);
-//        else {
-//            Matisse.from(this)
-//                    .choose(MimeType.ofImage(), true)
-//                    .countable(true)
-//                    .maxSelectable(25)
-//                    .thumbnailScale(1.0f)
-//                    .theme(R.style.Matisse_Dracula)
-//                    .imageEngine(new PicassoEngine())
-//                    .forResult(INTENT_REQUEST_GET_IMAGES);
-//        }
     }
     /////gallery
 

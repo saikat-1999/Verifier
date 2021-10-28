@@ -92,9 +92,14 @@ public class MainActivity extends AppCompatActivity {
                 boolean cameraAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
                 if (cameraAccepted) {
                     File file = new File(Environment.getExternalStorageDirectory() + "/Snaplingo/.ocr", "ocr_database.json");
-                    if (introPref.isFirstTimeLaunchAfterUpdate() || !file.exists()) {
-                        new MoveToFolders().execute();
+                    if (!file.exists()) {
+//                        new MoveToFolders().execute();
+                        Toast.makeText(this, "hellooo", Toast.LENGTH_SHORT).show();
                     }
+//                    if (introPref.isFirstTimeLaunchAfterUpdate() || !file.exists()) {
+//                        new MoveToFolders().execute();
+//                        Toast.makeText(this, "hellooo", Toast.LENGTH_SHORT).show();
+//                    }
                 } else {
                     Toast.makeText(this, "permission denied", Toast.LENGTH_SHORT).show();
                 }
@@ -134,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
 
-                    Intent intent = new Intent(MainActivity.this, OcrResultActivity.class);
+                    Intent intent = new Intent(MainActivity.this, ScannerActivity.class);
                     intent.putExtra("Text",sb.toString().trim());
                     intent.putExtra("selection", "1");
                     startActivity(intent);
