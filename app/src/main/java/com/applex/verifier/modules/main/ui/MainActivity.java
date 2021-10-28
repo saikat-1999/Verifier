@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private Bitmap bitmap;
     private long mLastClickTime = 0;
     private Button qr, btnScan;
-    private TextView image_text, title_text;
+    private TextView qr_text, title_text;
     private LinearLayout layout;
     private ImageView qrImageview, shareQr;
 
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         buttonqr = findViewById(R.id.qr);
-
+        qr_text = findViewById(R.id.scanned_text);
         cameraPermission = new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
         buttonqr.setOnClickListener(v -> {
@@ -75,6 +75,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Intent i = getIntent();
+        if(i.getStringExtra("text") != null){
+            qr_text.setText(i.getStringExtra("text"));
+        }
     }
     private boolean checkCameraPermission() {
         boolean result= ContextCompat.checkSelfPermission(MainActivity.this,

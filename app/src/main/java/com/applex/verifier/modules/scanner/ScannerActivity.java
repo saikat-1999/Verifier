@@ -181,17 +181,17 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
                 READ_WRITE_CAMERA_PERMISSIONS);
     }
 
-    private void requestCameraPermission(){
-        ActivityCompat.requestPermissions(this, cameraPermission, CAMERA_REQUEST_CODE);
-    }
-
-    private boolean checkCameraPermission(){
-        boolean result= ContextCompat.checkSelfPermission(this,
-                Manifest.permission.CAMERA) == (PackageManager.PERMISSION_GRANTED);
-        boolean result1= ContextCompat.checkSelfPermission(this,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE )== (PackageManager.PERMISSION_GRANTED);
-        return result && result1;
-    }
+//    private void requestCameraPermission(){
+//        ActivityCompat.requestPermissions(this, cameraPermission, CAMERA_REQUEST_CODE);
+//    }
+//
+//    private boolean checkCameraPermission(){
+//        boolean result= ContextCompat.checkSelfPermission(this,
+//                Manifest.permission.CAMERA) == (PackageManager.PERMISSION_GRANTED);
+//        boolean result1= ContextCompat.checkSelfPermission(this,
+//                Manifest.permission.WRITE_EXTERNAL_STORAGE )== (PackageManager.PERMISSION_GRANTED);
+//        return result && result1;
+//    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
