@@ -90,22 +90,25 @@ public class MainActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == CAMERA_REQUEST_CODE) {
+
             if (grantResults.length > 0) {
                 boolean cameraAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
                 if (cameraAccepted) {
-                    File file = new File(Environment.getExternalStorageDirectory() + "/Snaplingo/.ocr", "ocr_database.json");
-                    if (!file.exists()) {
+                    //File file = new File(Environment.getExternalStorageDirectory() + "/Snaplingo/.ocr", "ocr_database.json");
+                    //if (!file.exists()) {
 //                        new MoveToFolders().execute();
-                        Toast.makeText(this, "hellooo", Toast.LENGTH_SHORT).show();
-                    }
+                    Toast.makeText(this, "camera accepted", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "camera denied", Toast.LENGTH_SHORT).show();
 //                    if (introPref.isFirstTimeLaunchAfterUpdate() || !file.exists()) {
 //                        new MoveToFolders().execute();
 //                        Toast.makeText(this, "hellooo", Toast.LENGTH_SHORT).show();
 //                    }
-                } else {
-                    Toast.makeText(this, "permission denied", Toast.LENGTH_SHORT).show();
                 }
             }
+                else {
+                    Toast.makeText(this, "permission denied", Toast.LENGTH_SHORT).show();
+                }
         }
     }
     //////////////////PERMISSION REQUESTS/////////////////
